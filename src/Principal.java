@@ -1,6 +1,10 @@
 import br.com.sergio.screenmatch.calculos.CalculadoraDeTempo;
+import br.com.sergio.screenmatch.calculos.FiltroRecomendacao;
+import br.com.sergio.screenmatch.modelos.Episodios;
 import br.com.sergio.screenmatch.modelos.Filme;
 import br.com.sergio.screenmatch.modelos.Serie;
+
+import java.util.ArrayList;
 
 public class Principal {
     public static void main(String[] args) {
@@ -14,7 +18,7 @@ public class Principal {
         meuFilme.avalia(8);
         meuFilme.avalia(5);
         meuFilme.avalia(10);
-        System.out.println("Total de avaliações: " +  meuFilme.getTotalDeAvaliacoes());
+        System.out.println("Total de avaliações: " + meuFilme.getTotalDeAvaliacoes());
         System.out.println(meuFilme.pegaMedia());
 
         Serie lost = new Serie();
@@ -38,5 +42,32 @@ public class Principal {
         calculadora.inclui(outroFilme);
         calculadora.inclui(lost);
         System.out.println(calculadora.getTempoTotal());
+
+        FiltroRecomendacao filtro = new FiltroRecomendacao();
+        filtro.filtra(meuFilme);
+
+        Episodios episodios = new Episodios();
+        episodios.setNumero(1);
+        episodios.setSerie(lost);
+        episodios.setTotalVisualizacoes(300);
+        filtro.filtra(episodios);
+
+        var filmeDoPaulo = new Filme();
+        filmeDoPaulo.setDuracaoEmMinutos(200);
+        filmeDoPaulo.setNome("Dogville");
+        filmeDoPaulo.setAnoDeLancamento(2003);
+        filmeDoPaulo.avalia(10);
+
+        ArrayList<Filme> listaDefilmes = new ArrayList<>();
+        listaDefilmes.add(filmeDoPaulo);
+        listaDefilmes.add(meuFilme);
+        listaDefilmes.add(outroFilme);
+        System.out.println("Tamanho da lista: " + listaDefilmes.size());
+        System.out.println("Primeiro filme: " + listaDefilmes.get(0).getNome());
+
+        for (Filme lista : listaDefilmes) {
+            System.out.println(lista.getNome());
+        }
+
     }
 }
