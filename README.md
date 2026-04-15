@@ -13,10 +13,12 @@ Este projeto faz parte da minha jornada de transição de carreira de advogado p
 Consolidar conhecimentos em backend com Java e evoluir o projeto até um nível profissional, simulando cenários reais de desenvolvimento.
 
 📌 Funcionalidades atuais
-Cadastro de filmes e séries
-Aplicação de herança entre classes
-Cálculo e exibição de avaliações
-Organização de dados em listas
+🎬 Cadastro de filmes e séries
+🧱 Aplicação de herança e reutilização de código
+⭐ Cálculo e exibição de avaliações
+📊 Organização de dados utilizando ArrayList
+🧠 Sistema de recomendação baseado em classificação
+🔌 Uso de interface (Classificavel) para padronização de comportamento
 
 🚧 Próximas evoluções
 Implementar filtros de busc
